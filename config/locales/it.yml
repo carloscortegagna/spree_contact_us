@@ -1,0 +1,18 @@
+it:
+  spree:
+    activemodel:
+      attributes:
+        contact_us/contact:
+          name: "Nome"
+          email: "Email"
+          message: "Messaggio"
+          subject: "Oggetto"
+    contact_us_title: "Contattaci"
+    sent_by_contact_form: "Notifica di contatto da %{email}"
+    sent_by_name: "Inviato da %{name} - %{email}"
+    subject: "Notifica di contatto da %{email}"
+    submit: "Invia"
+
+    contact_us:
+      notices:
+        success: "Richiesta di contatto inviata correttamente."
