@@ -1,14 +1,14 @@
 class Spree::ContactUs::ContactsController < Spree::StoreController
+  helper 'spree/products'
 
-  helper "spree/products"
   def create
-    @contact = Spree::ContactUs::Contact.new(params[:contact_us_contact])
+    @contact = Spree::ContactUs::Contact.new params[:contact_us_contact]
 
     if @contact.save
       if Spree::ContactUs::Config.contact_tracking_message.present?
         flash[:contact_tracking] = Spree::ContactUs::Config.contact_tracking_message
       end
-      redirect_to(spree.root_path, :notice => Spree.t('contact_us.notices.success'))
+      redirect_to spree.contact_success_path
     else
       render :new
     end
@@ -18,6 +18,7 @@ class Spree::ContactUs::ContactsController < Spree::StoreController
     @contact = Spree::ContactUs::Contact.new
     @taxonomies = Spree::Taxonomy.includes(root: :children)
   end
+
 
   private
 
