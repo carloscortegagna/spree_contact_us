@@ -12,6 +12,8 @@ it:
     sent_by_name: "Inviato da %{name} - %{email}"
     subject: "Notifica di contatto da %{email}"
     submit: "Invia"
+    contact_us_to_email: Invia notifiche di contatto a
+    contact_us_to_email_info: 'Per specificare indirizzi multipli, separarli con virgole.'
 
     contact_us:
       notices:
